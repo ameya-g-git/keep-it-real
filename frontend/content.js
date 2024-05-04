@@ -24,6 +24,21 @@
     // var score = data['score']*100 + "%";
   })();
 
+document.onreadystatechange = function () { // loading screen to wait for data
+  var state = document.readyState
+  if (state == 'interactive') {
+        document.getElementById('loader').style.visibility = "visible"
+        document.getElementById('confidence').style.visibility="hidden";
+        document.getElementById('cards').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+          document.getElementById('loader').style.visibility = "hidden"
+          document.getElementById('confidence').style.visibility="visible";
+          document.getElementById('cards').style.visibility="visible";
+      },1000);
+  }
+}
+
 window.onload = e => { // PUT THIS INSIDE THE ASYNC, AFTER GETTING DATA
   const {score, votes} = {score: 0.5, votes: [100, 200]} // temporary data just to make it work on my system 
   const totalVotes = votes[0] + votes[1]
