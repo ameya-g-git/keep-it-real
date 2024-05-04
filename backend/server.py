@@ -7,7 +7,9 @@ CORS(app, support_credentials=True)
 @cross_origin(supports_credentials=True)
 
 def func():
+    print("helli")
     data = request.get_json()
+    print("data request")
     if data is None:
         return {}
     
