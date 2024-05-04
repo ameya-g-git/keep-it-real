@@ -24,6 +24,21 @@
     // var score = data['score']*100 + "%";
   })();
 
+document.onreadystatechange = function () { // loading screen to wait for data
+  var state = document.readyState
+  if (state == 'interactive') {
+        document.getElementById('loader').style.opacity = "1"
+        document.getElementById('confidence').style.opacity="0";
+        document.getElementById('cards').style.opacity="0";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+          document.getElementById('loader').style.opacity = "0"
+          document.getElementById('confidence').style.opacity="1";
+          document.getElementById('cards').style.opacity="1";
+      },1000);
+  }
+}
+
 window.onload = e => { // PUT THIS INSIDE THE ASYNC, AFTER GETTING DATA
   const {score, votes} = {score: 0.5, votes: [100, 200]} // temporary data just to make it work on my system 
   const totalVotes = votes[0] + votes[1]
@@ -36,7 +51,7 @@ window.onload = e => { // PUT THIS INSIDE THE ASYNC, AFTER GETTING DATA
 
   const dataList = ['1', '2', '3'] // list of perspective Objects
   document.getElementById("cards").innerHTML += dataList.map(perspective => { // the variable `perspective` will hold the Object containing the perspective data
-    `<div id="perspective-placeholder" class="flex flex-col p-4 bg-white shadow-lg w- rounded-2xl -gap-2">
+    `<div class="flex flex-col p-4 bg-white shadow-lg w- rounded-2xl -gap-2">
         <h2 class="font-bold text-md ">${perspectiveName}</h2>
         <h3 class="text-xs italic">${summaryOfTheme}</h3>
         <a class="self-end mt-2 text-xs underline" href="${articleLink}">Check out alternate perspectives!</a>
