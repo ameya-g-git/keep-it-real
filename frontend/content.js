@@ -51,7 +51,7 @@ window.onload = e => { // PUT THIS INSIDE THE ASYNC, AFTER GETTING DATA
 
   const dataList = ['1', '2', '3'] // list of perspective Objects
   document.getElementById("cards").innerHTML += dataList.map(perspective => { // the variable `perspective` will hold the Object containing the perspective data
-    `<div id="perspective-placeholder" class="flex flex-col p-4 bg-white shadow-lg w- rounded-2xl -gap-2">
+    `<div class="flex flex-col p-4 bg-white shadow-lg w- rounded-2xl -gap-2">
         <h2 class="font-bold text-md ">${perspectiveName}</h2>
         <h3 class="text-xs italic">${summaryOfTheme}</h3>
         <a class="self-end mt-2 text-xs underline" href="${articleLink}">Check out alternate perspectives!</a>
