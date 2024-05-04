@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./frontend/index.html"],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["Tahoma"]
+    },
+    extend: {
+    },
   },
   plugins: [],
 }

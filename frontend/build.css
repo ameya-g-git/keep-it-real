@@ -46,7 +46,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Tahoma;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -446,6 +446,43 @@ video {
   display: none;
 }
 
+:root {
+  --better-green: rgb(61, 160, 61);
+  --better-red: rgb(185, 39, 39);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 0.75rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+          appearance: none;
+  background-color: var(--better-red);
+  width: 100%;
+  height: 0.5rem;
+}
+
+::-ms-thumb {
+  margin: 0;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  height: 1rem;
+  width: 0.5rem;
+  border-radius: 2rem;
+  margin: -0.25rem 0px;
+  background-color: var(--better-green);
+  box-shadow: -320px 0 0 320px var(--better-green);
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -554,12 +591,73 @@ video {
   --tw-contain-style:  ;
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+.flex {
+  display: flex;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.w-80 {
+  width: 20rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.bg-stone-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-orange-950 {
+  --tw-text-opacity: 1;
+  color: rgb(67 20 7 / var(--tw-text-opacity));
 }
