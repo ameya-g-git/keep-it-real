@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
+from perspective import get_perspective
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
@@ -7,13 +8,12 @@ CORS(app, support_credentials=True)
 @cross_origin(supports_credentials=True)
 
 def func():
-    print("helli")
     data = request.get_json()
-    print("data request")
     if data is None:
         return {}
-    
-    return_data = {"score": 0.5, "votes": [100, 200]}
+    url = data["url"]
+    perspective = get_perspective(url)
+    return_data = {"score": 0.5, "votes": [100, 200], "perspectives": perspective}
     return jsonify(return_data)
 
 if __name__ == "__main__":
