@@ -1,27 +1,36 @@
 function updateHTML(data) {
     
-    const score = Math.round(data.score*100);
+    var score = Math.round(data.score*1000)/10;
+    if (score < 1) {
+        score = 1;
+    }
+    if (score > 99.9) {
+        score = 99.9;
+    }
     const votes = data.vote;
 
     console.log(score)
     console.log(votes)
 
     const totalVotes = votes[0] + votes[1];
+    console.log(votes[0], totalVotes)
     const scoreFormatted = `${score}%`;
 
+    document.getElementById("vote-slider").value = votes[0];
     document.getElementById("score").innerText = scoreFormatted;
     document.getElementById("vote").innerText = `${Math.round((votes[0] / totalVotes) * 100)}%`;
     document.getElementById("vote-slider").max = totalVotes;
-    document.getElementById("vote-slider").value = votes[0];
 
     const cardContainer = document.getElementById("cards");
-    const dataList = data.perspectives; // Assuming perspectives in response data
-    cardContainer.innerHTML = dataList.map(perspective => {
+    var dataList = data.perspective; // Assuming perspectives in response data
+    if (score < 40) {
+        dataList = []
+    }
+    cardContainer.innerHTML += dataList.map(perspective => {
         return `
             <div class="flex flex-col p-4 bg-white shadow-lg w-full rounded-2xl gap-2">
-                <h2 class="font-bold text-md">${perspective.name}</h2>
-                <h3 class="text-xs italic">${perspective.summary}</h3>
-                <a class="self-end mt-2 text-xs underline" href="${perspective.link}">Check out alternate perspectives!</a>
+                <h2 class="font-bold text-md">-${perspective.text}</h2>
+                <h3 class="text-xs italic">-${perspective.source}</h3>
             </div>
         `;
     }).join('');
@@ -63,5 +72,5 @@ document.onreadystatechange = function () {
             document.getElementById('loader').style.opacity = "0";
             document.getElementById('confidence').style.opacity = "1";
             document.getElementById('cards').style.opacity = "1";
-        },2000);
+        },3000);
 }}

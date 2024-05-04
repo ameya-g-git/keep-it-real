@@ -1,9 +1,10 @@
 {
-    "name": "Test",
-    "description": "Base Level Extension",
+    "name": "Keep It Real",
+    "description": "Fake News Detector",
     "version": "1.0",
     "manifest_version": 3,
     "action": {
+      "default_icon": "images/keepitreal_logo.png",
       "default_popup": "index.html"
     },
     "content_scripts": [
