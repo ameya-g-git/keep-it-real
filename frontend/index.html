@@ -3,24 +3,26 @@
     <link rel="stylesheet" href="./build.css">
     <script src="./content.js"></script>
   </head>
-  <body class="flex flex-col items-center gap-1 text-font w-80 bg-background">
+  <body class="flex flex-col items-center gap-1 mb-4 text-font w-80 bg-background">
     <header class="flex flex-row items-center w-full h-12 gap-1 shadow-lg">
       <img src="./images/logo_placeholder.png" class="h-full p-2" alt="NewNews logo">
       <h2 class="italic font-bold">NewNews</h2>
     </header>
     <div id="confidence" class="flex flex-col items-center justify-center w-full py-6">
       <h2 class="-mb-2 text-2xl">This claim is</h2>
-      <h1 class="-mb-2 font-extrabold text-8xl">XX%</h1> <!-- CONFIDENCE INTERVAL -->
+      <h1 id="score" class="-mb-2 font-extrabold text-8xl">XX%</h1> <!-- CONFIDENCE INTERVAL -->
       <h2 class="text-2xl">correct</h2>
     </div>
-    <div id="vote" class="flex flex-col items-center justify-center w-11/12 px-4 py-8 bg-white shadow-lg rounded-2xl -gap-2">
-      <form class="w-full">
-        <input class="w-full" disabled type="range" min="0" max="100" value="50" step="1">
-      </form>
-      <h3 class="-my-2 text-sm italic ">
-        <span id="accuracy_score"></span> <!-- PERCENTAGE OF USERS -->
-        <span>of users think this is factual!</span>
-      </h3>
+    <div id="cards" class="flex flex-col w-full gap-2 px-4">
+      <div class="flex flex-col items-center justify-center w-full px-4 py-8 bg-white shadow-lg rounded-2xl -gap-2">
+        <form class="w-full">
+          <input id="vote-slider" class="w-full" disabled type="range" min="0" max="100" value="50" step="1">
+        </form>
+        <h3 class="-my-2 text-sm italic ">
+          <span id="vote">XX%</span> <!-- PERCENTAGE OF USERS -->
+          <span>of users think this is factual!</span>
+        </h3>
+      </div>
     </div>
   </body>
 </html>
