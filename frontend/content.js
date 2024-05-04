@@ -26,8 +26,20 @@
 
 window.onload = e => { // PUT THIS INSIDE THE ASYNC, AFTER GETTING DATA
   const {score, votes} = {score: 0.5, votes: [100, 200]} // temporary data just to make it work on my system 
+  const totalVotes = votes[0] + votes[1]
   const scoreFormatted = `${score * 100}%`
-  document.getElementById("accuracy-score").innerHTML = `<span>${scoreFormatted}</span>`;
+  document.getElementById("score").innerHTML = scoreFormatted
+  document.getElementById("vote").innerHTML = `${Math.round((votes[0] / totalVotes) * 100, 3)}%`;
   document.getElementById("vote-slider").max = votes[0] + votes[1]
   document.getElementById("vote-slider").value = votes[0]
+
+
+  const dataList = ['1', '2', '3'] // list of perspective Objects
+  document.getElementById("cards").innerHTML += dataList.map(perspective => { // the variable `perspective` will hold the Object containing the perspective data
+    `<div id="perspective-placeholder" class="flex flex-col p-4 bg-white shadow-lg w- rounded-2xl -gap-2">
+        <h2 class="font-bold text-md ">${perspectiveName}</h2>
+        <h3 class="text-xs italic">${summaryOfTheme}</h3>
+        <a class="self-end mt-2 text-xs underline" href="${articleLink}">Check out alternate perspectives!</a>
+    </div>`
+  })
 }
