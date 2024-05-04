@@ -1,6 +1,8 @@
 function updateHTML(data) {
-    
+    // Function to update HTML with data
+
     var score = Math.round(data.score*1000)/10;
+    // Check if score is within bounds
     if (score < 1) {
         score = 1;
     }
@@ -9,11 +11,8 @@ function updateHTML(data) {
     }
     const votes = data.vote;
 
-    console.log(score)
-    console.log(votes)
-
     const totalVotes = votes[0] + votes[1];
-    console.log(votes[0], totalVotes)
+
     const scoreFormatted = `${score}%`;
 
     document.getElementById("vote-slider").value = votes[0];
@@ -22,10 +21,12 @@ function updateHTML(data) {
     document.getElementById("vote-slider").max = totalVotes;
 
     const cardContainer = document.getElementById("cards");
-    var dataList = data.perspective; // Assuming perspectives in response data
+    var dataList = data.perspective;
+    // Check if score is less than 40, if it is, then don't show any perspectives since it's not reliable
     if (score < 40) {
         dataList = []
     }
+    // Perspective Card
     cardContainer.innerHTML += dataList.map(perspective => {
         return `
             <div class="flex flex-col p-4 bg-white shadow-lg w-full rounded-2xl gap-2">
@@ -40,6 +41,7 @@ function updateHTML(data) {
     const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
     const cur_url = tab.url;
 
+    // Fetch Data from backend
     if (cur_url) {
         try {
             await fetch('http://127.0.0.1:5000', {
@@ -62,6 +64,7 @@ function updateHTML(data) {
 })();
 
 document.onreadystatechange = function () {
+    // Loading animation
     if (document.readyState === 'interactive') {
         document.getElementById('loader').style.opacity = "1";
         document.getElementById('confidence').style.opacity = "0";

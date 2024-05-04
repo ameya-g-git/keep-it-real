@@ -10,6 +10,12 @@ from web_scrape import getHTML
 
 
 def clean_text(text):
+    """
+    Clean the text by removing special characters, numbers, and stopwords
+    
+    :param text: The text to be cleaned
+    :return: The cleaned text
+    """
     text = re.sub(r"[!@#$(),\n%^*?.'\:;~`0-9]", '', str(text)).lower()
     stop_words = set(stopwords.words('english'))
     word_tokens = word_tokenize(text, language='english', preserve_line=True)
@@ -18,6 +24,16 @@ def clean_text(text):
 
 
 def prediction(title, text, model, cv_titles, cv_texts):
+    """
+    Predict the probability of the given text being reliable news
+    
+    :param title: The title of the article
+    :param text: The text of the article
+    :param model: The model used for prediction
+    :param cv_titles: The CountVectorizer for the titles
+    :param cv_texts: The CountVectorizer for the text
+    :return: The probability of the article being fake news
+    """
     title = clean_text(title)
     text = clean_text(text)
     X_title = cv_titles.transform([title])
@@ -36,6 +52,11 @@ file = open('data/titles_cv.pickle', 'rb')
 cv_titles = pickle.load(file)
 
 def run(url):
+    """
+    Run the prediction model on the given URL
+    
+    :param url: The URL of the article
+    :return: The probability of the article being fake news"""
     title, text = getHTML(url)
     score = prediction(title, text, model, cv_titles, cv_texts)
     return score[0][0]
