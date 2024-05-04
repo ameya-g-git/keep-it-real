@@ -38,6 +38,6 @@ cv_titles = pickle.load(file)
 def run(url):
     title, text = getHTML(url)
     score = prediction(title, text, model, cv_titles, cv_texts)
-    return score
+    return score[0][0]
 
-print(run('https://nymag.com/intelligencer/2020/10/trump-leaves-60-minutes-interview-complains-on-twitter.html')) 
+# print(run('https://www.theonion.com/trump-watching-movie-on-ipad-during-trial-without-using-1851449290'))
