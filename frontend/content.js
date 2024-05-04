@@ -27,14 +27,14 @@
 document.onreadystatechange = function () { // loading screen to wait for data
   var state = document.readyState
   if (state == 'interactive') {
-        document.getElementById('loader').style.visibility = "visible"
-        document.getElementById('confidence').style.visibility="hidden";
-        document.getElementById('cards').style.visibility="hidden";
+        document.getElementById('loader').style.opacity = "1"
+        document.getElementById('confidence').style.opacity="0";
+        document.getElementById('cards').style.opacity="0";
   } else if (state == 'complete') {
       setTimeout(function(){
-          document.getElementById('loader').style.visibility = "hidden"
-          document.getElementById('confidence').style.visibility="visible";
-          document.getElementById('cards').style.visibility="visible";
+          document.getElementById('loader').style.opacity = "0"
+          document.getElementById('confidence').style.opacity="1";
+          document.getElementById('cards').style.opacity="1";
       },1000);
   }
 }
