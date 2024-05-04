@@ -26,13 +26,13 @@ def prediction(title, text, model, cv_titles, cv_texts):
     return model.predict_proba(X)
 
 
-file = open('./backend/fake_news.pickle', 'rb')
+file = open('data/fake_news.pickle', 'rb')
 model = pickle.load(file)
 
-file = open('./backend/texts_cv.pickle', 'rb')
+file = open('data/texts_cv.pickle', 'rb')
 cv_texts = pickle.load(file)
 
-file = open('./backend/titles_cv.pickle', 'rb')
+file = open('data/titles_cv.pickle', 'rb')
 cv_titles = pickle.load(file)
 
 def run(url):
