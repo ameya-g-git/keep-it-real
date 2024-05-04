@@ -11,7 +11,7 @@ def func():
     if data is None:
         return {}
     
-    return_data = {}
+    return_data = {"score": 0.5, "votes": [100, 200]}
     return jsonify(return_data)
 
 if __name__ == "__main__":
