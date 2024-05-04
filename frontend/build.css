@@ -447,8 +447,8 @@ video {
 }
 
 :root {
-  --better-green: rgb(61, 160, 61);
-  --better-red: rgb(185, 39, 39);
+  --better-green: #0ec03d;
+  --better-red: #c1183a;
 }
 
 input[type="range"] {
@@ -470,6 +470,7 @@ input[type="range"] {
 
 ::-ms-thumb {
   margin: 0;
+  border-radius: 1rem;
 }
 
 ::-webkit-slider-thumb {
@@ -591,8 +592,43 @@ input[type="range"] {
   --tw-contain-style:  ;
 }
 
+.-my-4 {
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.-my-2 {
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.-my-1 {
+  margin-top: -0.25rem;
+  margin-bottom: -0.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
 .flex {
   display: flex;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-80 {
@@ -601,6 +637,22 @@ input[type="range"] {
 
 .w-full {
   width: 100%;
+}
+
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -615,23 +667,53 @@ input[type="range"] {
   justify-content: center;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
 
-.bg-stone-100 {
+.gap-4 {
+  gap: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.bg-background {
   --tw-bg-opacity: 1;
-  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
+  background-color: rgb(242 242 247 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .text-2xl {
@@ -649,6 +731,10 @@ input[type="range"] {
   line-height: 1.25rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -657,7 +743,13 @@ input[type="range"] {
   font-style: italic;
 }
 
-.text-orange-950 {
+.text-font {
   --tw-text-opacity: 1;
-  color: rgb(67 20 7 / var(--tw-text-opacity));
+  color: rgb(32 0 48 / var(--tw-text-opacity));
+}
+
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

@@ -6,6 +6,10 @@ module.exports = {
       sans: ["Tahoma"]
     },
     extend: {
+      colors: {
+        background: "#F2F2F7",
+        font: "#200030"
+      }
     },
   },
   plugins: [],

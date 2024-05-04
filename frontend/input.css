@@ -4,8 +4,8 @@
 
 @layer base {
     :root {
-        --better-green: rgb(61, 160, 61);
-        --better-red: rgb(185, 39, 39);
+        --better-green: #0ec03d;
+        --better-red: #c1183a;
     }
 
     input[type="range"] {
@@ -24,6 +24,7 @@
 
     ::-ms-thumb {
         margin: 0;
+        border-radius: 1rem;
     }
 
     ::-webkit-slider-thumb {
