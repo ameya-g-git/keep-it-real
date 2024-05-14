@@ -8,5 +8,8 @@ Keep It Real is a Chrome extension that uses a combination of AI models and user
 
 Though the project has its fair share of bugs and incomplete features, it is an excellent proof of concept for the wide breadth of possibilities that come as a result of the intersection between user-generated content and AI tools. By effectively utilizing this combination of human knowldege and machine learning, both sides of this system can improve, allowing us to achieve a more educated future.
 
+Frontend: HTML, TailwindCSS, JavaScript
+Backend: Flask, CohereAPI, SciKit, NLTK
+
 ![keepitreal_demo](https://github.com/ameya-g-git/keep-it-real/assets/121361927/f7a47725-919b-4a75-b18a-00b8828d42d2)
 
