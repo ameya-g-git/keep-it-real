@@ -1,4 +1,5 @@
 import cohere
+from os import environ
 
 def get_perspective(text):
     """
@@ -8,7 +9,7 @@ def get_perspective(text):
     :return: A list of alternative perspectives.
     """
 
-    apiKey = "rq5Zze3PLyufogK2mwfXSAw7pCy4d7YWOZVlow6a"
+    apiKey = environ("API-KEY") # Add your API key here
     co = cohere.Client(apiKey)
     response = co.chat(
         max_tokens=2000,
