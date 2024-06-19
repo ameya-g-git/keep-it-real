@@ -1,4 +1,4 @@
-![banner](./assets/banner.png)
+![banner](./assets/image.png)
 # keep-it-real
 *A project created in 7 hours for WolfHacks 2024 hosted by Chinguacousy S.S.!*
 
