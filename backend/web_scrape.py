@@ -25,6 +25,3 @@ def getHTML(url):
     final = re.sub(r"[\n]", '', str(article)).lower()
     final = re.sub(' +', ' ', final)
     return title, final
-
-
-# print(getHTML(r'https://www.cnn.com/2024/05/04/politics/access-hollywood-trump-what-matters/index.html'))
